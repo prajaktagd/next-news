@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: app/news/page.tsx
+  checksum: 1f9afb4a02f71f74997eb86669b6408dffe405791a5d0cb15b3ec9242eb8ab01
 - filename: package-lock.json
   checksum: 6048c3f7e9efaf6dfbf463ced00e323142ac46ddae9f800671959e5af4600aff
 version: "1.0"
