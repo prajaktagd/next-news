@@ -1,7 +1,9 @@
 "use client";
 
-import { NEWS } from "@/data/news";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+
+import { NEWS } from "@/data/news";
 
 const NewsDetailsPage = ({
   params,
@@ -16,7 +18,7 @@ const NewsDetailsPage = ({
   return (
     <article className="news-article">
       <header>
-        <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+        <Image src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
         <h1>{newsItem.title}</h1>
         <time dateTime={newsItem.date}>{newsItem.date}</time>
       </header>

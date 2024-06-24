@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { NEWS } from "@/data/news";
 
@@ -9,7 +10,7 @@ const NewsPage = () => {
         return (
           <li key={newsItem.id}>
             <Link href={`/news/${newsItem.slug}`}>
-              <img
+              <Image
                 src={`/images/news/${newsItem.image}`}
                 alt={newsItem.title}
               />
