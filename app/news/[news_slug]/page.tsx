@@ -1,15 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { NEWS } from "@/data/news";
+import { getNewsForSlug } from "@/lib/news";
 
 const NewsDetailsPage = ({
   params,
 }: Readonly<{ params: { news_slug: string } }>) => {
   const newsSlug = params.news_slug;
-  const newsItem = NEWS.find((newsItem) => newsItem.slug === newsSlug);
+  const newsItem = getNewsForSlug(newsSlug);
 
   if (!newsItem) {
     notFound();
@@ -18,7 +17,7 @@ const NewsDetailsPage = ({
   return (
     <article className="news-article">
       <header>
-        <Image src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+        <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
         <h1>{newsItem.title}</h1>
         <time dateTime={newsItem.date}>{newsItem.date}</time>
       </header>

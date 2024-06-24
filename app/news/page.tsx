@@ -1,25 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
-
-import { NEWS } from "@/data/news";
+import NewsList from "@/components/NewsList";
+import { getAllNews } from "@/lib/news";
 
 const NewsPage = () => {
   return (
-    <ul className="news-list">
-      {NEWS.map((newsItem) => {
-        return (
-          <li key={newsItem.id}>
-            <Link href={`/news/${newsItem.slug}`}>
-              <Image
-                src={`/images/news/${newsItem.image}`}
-                alt={newsItem.title}
-              />
-              <span>{newsItem.title}</span>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <h1>Headlines</h1>
+      <NewsList news={getAllNews()} />
+    </>
   );
 };
 
