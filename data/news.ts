@@ -1,4 +1,6 @@
-export const NEWS = [
+import NewsItem from "@/models/newsItem";
+
+export const NEWS: Array<NewsItem> = [
   {
     id: "n1",
     slug: "will-ai-replace-humans",

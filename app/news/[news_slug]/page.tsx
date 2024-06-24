@@ -7,8 +7,7 @@ import { getNewsForSlug } from "@/lib/news";
 const NewsDetailsPage = ({
   params,
 }: Readonly<{ params: { news_slug: string } }>) => {
-  const newsSlug = params.news_slug;
-  const newsItem = getNewsForSlug(newsSlug);
+  const newsItem = getNewsForSlug(params.news_slug);
 
   if (!newsItem) {
     notFound();
