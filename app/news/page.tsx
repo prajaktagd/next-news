@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NewsPage = () => {
   return (
-    <ul>
+    <ul className="news-list">
       <li>
         <Link href="/news/news1">News Item 1</Link>
       </li>
