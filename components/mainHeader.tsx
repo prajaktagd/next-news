@@ -1,15 +1,18 @@
-import Link from "next/link";
+import NavItem from "./navItem";
 
 const MainHeader = () => {
   return (
     <header id="main-header">
       <div id="logo">
-        <Link href="/">NextNews</Link>
+        <NavItem href="/">NextNews</NavItem>
       </div>
       <nav>
         <ul>
           <li>
-            <Link href="/news">News</Link>
+            <NavItem href="news">News</NavItem>
+          </li>
+          <li>
+            <NavItem href="archive">Archive</NavItem>
           </li>
         </ul>
       </nav>
