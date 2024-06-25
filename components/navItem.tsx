@@ -9,7 +9,6 @@ const NavItem = ({
 }: Readonly<{ href: string; children: string }>) => {
   const pathname = usePathname();
   const highlightNavItem = () => (pathname.startsWith(href) ? "active" : "");
-  console.log(href, highlightNavItem());
 
   return (
     <Link href={href} className={highlightNavItem()}>

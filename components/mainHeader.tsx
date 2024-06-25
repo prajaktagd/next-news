@@ -9,10 +9,10 @@ const MainHeader = () => {
       <nav>
         <ul>
           <li>
-            <NavItem href="news">News</NavItem>
+            <NavItem href="/news">News</NavItem>
           </li>
           <li>
-            <NavItem href="archive">Archive</NavItem>
+            <NavItem href="/archive">Archive</NavItem>
           </li>
         </ul>
       </nav>
