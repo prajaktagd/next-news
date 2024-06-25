@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import "./globals.css";
+import React, { ReactElement } from "react";
+import "../globals.css";
 import MainHeader from "@/components/mainHeader";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
   description: "Learn how to route to different pages.",
 };
 
-const RootLayout = ({ children }: Readonly<{ children: ReactElement }>) => {
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en">
       <body>

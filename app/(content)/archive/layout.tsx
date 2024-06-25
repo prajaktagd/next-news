@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 const ArchiveLayout = ({
   archive,
   latest,
-}: Readonly<{ archive: ReactElement; latest: ReactElement }>) => {
+}: Readonly<{ archive: React.ReactNode; latest: React.ReactNode }>) => {
   return (
     <div>
       <h1>News Archive</h1>

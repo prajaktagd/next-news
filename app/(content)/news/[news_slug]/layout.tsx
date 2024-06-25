@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 const NewsDetailsLayout = ({
   children,
   modal,
-}: Readonly<{ children: ReactElement; modal: ReactElement }>) => {
+}: Readonly<{ children: React.ReactNode; modal: React.ReactNode }>) => {
   return (
     <>
       {modal}
