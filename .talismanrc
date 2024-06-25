@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: app/archive/@archive/[[...filter]]/page.tsx
+  checksum: 1abe9757bc6e88228f2bc1c4cc182c8ec7417788adaa2063e8922ae8e03391b8
 - filename: app/news/page.tsx
   checksum: 1f9afb4a02f71f74997eb86669b6408dffe405791a5d0cb15b3ec9242eb8ab01
 - filename: components/NewsList.tsx

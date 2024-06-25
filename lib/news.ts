@@ -34,7 +34,7 @@ const getNewsForYear = (year: number) =>
 const getNewsForYearAndMonth = (year: number, month: number) =>
   NEWS.filter((news) => {
     const newsYear = new Date(news.date).getFullYear();
-    const newsMonth = new Date(news.date).getMonth();
+    const newsMonth = new Date(news.date).getMonth() + 1;
     return newsYear === year && newsMonth === month;
   });
 
