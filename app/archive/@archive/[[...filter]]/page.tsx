@@ -13,17 +13,28 @@ const FilteredNewsPage = ({
   const selectedYear = params.filter?.[0];
   const selectedMonth = params.filter?.[1];
 
+  const isInvalidYear =
+    selectedYear && !getAvailableNewsYears().includes(+selectedYear);
+  const isInvalidMonth =
+    selectedYear &&
+    selectedMonth &&
+    !getAvailableNewsMonths(+selectedYear).includes(+selectedMonth);
+
+  if (isInvalidYear || isInvalidMonth) {
+    throw Error("Invalid filter!");
+  }
+
   const navItems = !selectedYear
     ? getAvailableNewsYears()
     : !selectedMonth
-    ? getAvailableNewsMonths(parseInt(selectedYear))
+    ? getAvailableNewsMonths(+selectedYear)
     : [];
 
   const news = !selectedYear
     ? []
     : !selectedMonth
-    ? getNewsForYear(parseInt(selectedYear))
-    : getNewsForYearAndMonth(parseInt(selectedYear), parseInt(selectedMonth));
+    ? getNewsForYear(+selectedYear)
+    : getNewsForYearAndMonth(+selectedYear, +selectedMonth);
 
   const navItemHtml = (navItem: number) => {
     const href = selectedYear
