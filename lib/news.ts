@@ -1,6 +1,12 @@
-import { NEWS } from "@/data/news";
+import sql from "better-sqlite3";
 
-const getAllNews = () => NEWS;
+import { NEWS } from "@/data/news";
+import NewsItem from "@/models/newsItem";
+
+const db = sql("./data.db");
+
+const getAllNews = () =>
+  db.prepare("SELECT * FROM news").all() as Array<NewsItem>;
 
 const getLatestNews = () => NEWS.slice(0, 3);
 
