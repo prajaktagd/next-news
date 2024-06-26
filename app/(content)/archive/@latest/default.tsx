@@ -1,4 +1,4 @@
-import NewsList from "@/components/NewsList";
+import NewsList from "@/components/news-list";
 import { getLatestNews } from "@/lib/news";
 
 const LatestNewsPage = async () => {

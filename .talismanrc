@@ -9,6 +9,8 @@ fileignoreconfig:
   checksum: 42b1a6f84df2aceb1c2739d375067c62cd29186adcc79fe363e1b2184fcda7b4
 - filename: components/NewsList.tsx
   checksum: 8be80ff9e9e4260916242644b47c5ba5055edceb74105d42e84be31f2613be94
+- filename: components/filter-header.tsx
+  checksum: 7cc11144e7d9e72668adfc67a3ee005f7cda4a03468e1c683f77c09e2876a894
 - filename: package-lock.json
   checksum: 25f3ec20abfa3478fa0e72b6a1efe3afa5a96c842d4e868031e123dfcb76e050
 version: "1.0"
