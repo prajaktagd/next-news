@@ -7,36 +7,37 @@ import {
 } from "@/lib/news";
 import Link from "next/link";
 
-const FilteredNewsPage = ({
+const FilteredNewsPage = async ({
   params,
 }: Readonly<{ params: { filter: Array<string | undefined> | undefined } }>) => {
   const selectedYear = params.filter?.[0];
   const selectedMonth = params.filter?.[1];
 
-  const isInvalidYear =
-    selectedYear && !getAvailableNewsYears().includes(+selectedYear);
+  const availableYears = await getAvailableNewsYears();
+
+  const isInvalidYear = selectedYear && !availableYears.includes(selectedYear);
   const isInvalidMonth =
     selectedYear &&
     selectedMonth &&
-    !getAvailableNewsMonths(+selectedYear).includes(+selectedMonth);
+    !getAvailableNewsMonths(selectedYear).includes(selectedMonth);
 
   if (isInvalidYear || isInvalidMonth) {
     throw Error("Invalid filter!");
   }
 
   const navItems = !selectedYear
-    ? getAvailableNewsYears()
+    ? availableYears
     : !selectedMonth
-    ? getAvailableNewsMonths(+selectedYear)
+    ? getAvailableNewsMonths(selectedYear)
     : [];
 
   const news = !selectedYear
     ? []
     : !selectedMonth
-    ? getNewsForYear(+selectedYear)
-    : getNewsForYearAndMonth(+selectedYear, +selectedMonth);
+    ? await getNewsForYear(selectedYear)
+    : await getNewsForYearAndMonth(selectedYear, selectedMonth);
 
-  const navItemHtml = (navItem: number) => {
+  const navItemHtml = (navItem: string) => {
     const href = selectedYear
       ? `/archive/${selectedYear}/${navItem}`
       : `/archive/${navItem}`;

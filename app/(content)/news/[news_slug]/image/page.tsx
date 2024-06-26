@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 
-import { getNewsForSlug } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 
-const ImagePage = ({ params }: Readonly<{ params: { news_slug: string } }>) => {
-  const newsItem = getNewsForSlug(params.news_slug);
+const ImagePage = async ({
+  params,
+}: Readonly<{ params: { news_slug: string } }>) => {
+  const newsItem = await getNewsItem(params.news_slug);
 
   if (!newsItem) {
     notFound();

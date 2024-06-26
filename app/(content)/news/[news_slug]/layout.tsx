@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-
 const NewsDetailsLayout = ({
   children,
   modal,

@@ -1,15 +1,13 @@
-"use client";
-
 import { notFound } from "next/navigation";
 
-import { getNewsForSlug } from "@/lib/news";
+import { getNewsItem } from "@/lib/news";
 import Link from "next/link";
 
-const NewsDetailsPage = ({
+const NewsDetailsPage = async ({
   params,
 }: Readonly<{ params: { news_slug: string } }>) => {
   const newsSlug = params.news_slug;
-  const newsItem = getNewsForSlug(newsSlug);
+  const newsItem = await getNewsItem(newsSlug);
 
   if (!newsItem) {
     notFound();
