@@ -5,8 +5,10 @@ import NewsItem from "@/models/newsItem";
 
 const db = sql("./data.db");
 
-const getAllNews = () =>
-  db.prepare("SELECT * FROM news").all() as Array<NewsItem>;
+const getAllNews = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return db.prepare("SELECT * FROM news").all() as Array<NewsItem>;
+};
 
 const getLatestNews = () => NEWS.slice(0, 3);
 

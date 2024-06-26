@@ -1,11 +1,11 @@
 import NewsList from "@/components/NewsList";
 import { getAllNews } from "@/lib/news";
 
-const NewsPage = () => {
+const NewsPage = async () => {
   return (
     <>
       <h1>Headlines</h1>
-      <NewsList news={getAllNews()} />
+      <NewsList news={await getAllNews()} />
     </>
   );
 };
