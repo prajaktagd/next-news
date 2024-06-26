@@ -3,6 +3,10 @@ fileignoreconfig:
   checksum: 1abe9757bc6e88228f2bc1c4cc182c8ec7417788adaa2063e8922ae8e03391b8
 - filename: app/news/page.tsx
   checksum: 1f9afb4a02f71f74997eb86669b6408dffe405791a5d0cb15b3ec9242eb8ab01
+- filename: backend/app.js
+  checksum: 1930dd1dfb072351f91e5980a77f45f7ef6bfcde2ac7d7149633626a8f708c9a
+- filename: backend/package-lock.json
+  checksum: 42b1a6f84df2aceb1c2739d375067c62cd29186adcc79fe363e1b2184fcda7b4
 - filename: components/NewsList.tsx
   checksum: 8be80ff9e9e4260916242644b47c5ba5055edceb74105d42e84be31f2613be94
 - filename: package-lock.json
